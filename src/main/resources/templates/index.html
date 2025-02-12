@@ -1,10 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Form with Address Modal</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-$END$
+<div class="container">
+
+  <h4>New | Edit Customer</h4>
+
+  <form class="customer-form">
+
+    <div class="form-group">
+      <label for="customer-name">Customer Name</label>
+      <input type="text" id="customer-name" placeholder="Enter customer name">
+    </div>
+
+    <div class="form-group">
+      <label for="customer-type">Customer Type</label>
+      <select id="customer-type">
+        <option value="">Select customer type</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="customer-address">Address</label>
+      <div class="address-container">
+        <input type="text" id="customer-address" placeholder="Enter or select address" readonly>
+        <button type="button" id="address-btn" class="location-btn">📍</button>
+      </div>
+    </div>
+
+    <div id="map" class="map-section">
+      <p></p>
+    </div>
+
+  </form>
+</div>
+
+<!-- Address Modal -->
+<div id="address-modal" class="modal">
+  <div class="modal-content">
+    <span id="close-modal" class="close-btn">&times;</span>
+    <h4>New | Edit Address</h4>
+    <form id="address-form">
+      <div class="form-group">
+        <label for="street-name">Street Name:</label>
+        <input type="text" id="street-name" placeholder="Enter street name" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="suburb">Suburb:</label>
+        <input type="text" id="suburb" placeholder="Enter suburb" readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State:</label>
+        <select id="state" disabled>
+          <option value="">Select state</option>
+          <option value="NSW">New South Wales (NSW)</option>
+          <option value="VIC">Victoria (VIC)</option>
+          <option value="QLD">Queensland (QLD)</option>
+          <option value="WA">Western Australia (WA)</option>
+          <option value="SA">South Australia (SA)</option>
+          <option value="TAS">Tasmania (TAS)</option>
+          <option value="ACT">Australian Capital Territory (ACT)</option>
+          <option value="NT">Northern Territory (NT)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="postcode">Postcode:</label>
+        <input type="text" id="postcode" placeholder="Enter postcode" readonly>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Address</button>
+    </form>
+  </div>
+</div>
+
+<p id="address-display"></p>
+
+<script src="scripts/scripts.js"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2lLwhGsSg5osLbFpQ5jhjFvDg4F7LCvM&callback=initMap&v=weekly&solution_channel=GMP_CCS_geocodingservice_v2"
+        defer
+></script>
+
+
 </body>
+
 </html>
