@@ -30,7 +30,7 @@
     <div class="form-group">
       <label for="customer-address">Address</label>
       <div class="address-container">
-        <input type="text" id="customer-address" placeholder="Enter or select address" readonly>
+        <input type="text" id="customer-address" placeholder="Enter or select address" >
         <button type="button" id="address-btn" class="location-btn">📍</button>
       </div>
     </div>
@@ -55,12 +55,12 @@
 
       <div class="form-group">
         <label for="suburb">Suburb:</label>
-        <input type="text" id="suburb" placeholder="Enter suburb" readonly>
+        <input type="text" id="suburb" placeholder="Enter suburb">
       </div>
 
       <div class="form-group">
         <label for="state">State:</label>
-        <select id="state" disabled>
+        <select id="state">
           <option value="">Select state</option>
           <option value="NSW">New South Wales (NSW)</option>
           <option value="VIC">Victoria (VIC)</option>
@@ -75,7 +75,7 @@
 
       <div class="form-group">
         <label for="postcode">Postcode:</label>
-        <input type="text" id="postcode" placeholder="Enter postcode" readonly>
+        <input type="text" id="postcode" placeholder="Enter postcode">
       </div>
 
       <button type="submit" class="submit-btn">Submit Address</button>
@@ -87,7 +87,7 @@
 
 <script src="scripts/scripts.js"></script>
 <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2lLwhGsSg5osLbFpQ5jhjFvDg4F7LCvM&callback=initMap&v=weekly&solution_channel=GMP_CCS_geocodingservice_v2"
+        src="https://maps.googleapis.com/maps/api/js?key=API_KEY&loading=async&libraries=places&callback=initMap"
         defer
 ></script>
 
